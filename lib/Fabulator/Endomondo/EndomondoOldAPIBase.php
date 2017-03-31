@@ -12,8 +12,19 @@ use Psr\Http\Message\ResponseInterface;
  */
 class EndomondoOldAPIBase
 {
+    /**
+     * Url of old Endomondo API
+     */
     const API_URL = 'https://api.mobile.endomondo.com';
+
+    /**
+     * Endomondo endpoint for auth
+     */
     const URL_AUTH = '/mobile/auth';
+
+    /**
+     * Default user agent.
+     */
     const USER_AGENT = 'Dalvik/1.4.0 (Linux; U; Android 4.1; GT-B5512 Build/GINGERBREAD)';
 
     /**
@@ -35,9 +46,9 @@ class EndomondoOldAPIBase
     /**
      * Send request to Endomondo old api.
      *
-     * @param  string $endpoint
-     * @param  array $options
-     * @param  string $body
+     * @param  string $endpoint url of endomondo endpoint
+     * @param  array $options parameters to send, use authToken parameter for token
+     * @param  string $body body to send
      * @return ResponseInterface
      */
     public function send($endpoint, $options = [], $body = '')
@@ -53,8 +64,8 @@ class EndomondoOldAPIBase
     /**
      * Request auth token from Endomondo.
      *
-     * @param  string $email
-     * @param  string $password
+     * @param  string $email user email
+     * @param  string $password user password
      * @return ResponseInterface
      */
     public function requestAuthToken($email, $password)
