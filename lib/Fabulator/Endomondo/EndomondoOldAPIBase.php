@@ -2,7 +2,7 @@
 
 namespace Fabulator\Endomondo;
 
-use Rhumsaa\Uuid\Uuid;
+use Ramsey\Uuid\Uuid;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
